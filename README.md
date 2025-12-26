@@ -1,14 +1,18 @@
-# Choose Restaurant - Austin, TX
+# You Pick - Restaurant Recommendation App
 
 A fun, playful web app that helps you decide where to eat in Austin, Texas! Select your preferences and spin the wheel to get a restaurant recommendation.
 
+**"I don't know, you choose."** —Your Loved One
+
 ## Features
 
-- 🎡 **Wheel of Fortune-style spinner** - Watch the wheel spin before revealing your restaurant
+- 🎡 **Wheel of Fortune-style spinner** - Vibrant spinning wheel that starts as soon as you make your first selection
 - 🍕 **Cuisine Selection** - Choose from Italian, Mexican, Thai, Japanese, or Other
 - 💰 **Price Range** - Select your budget: $, $$, or $$$
 - 📍 **Location** - Pick your area: North, South, East, or West Austin
+- 🚫 **Exclude Cuisine** - Optionally exclude a cuisine type you don't want
 - 🔗 **Direct Links** - Click through to each restaurant's website
+- 📱 **Responsive Design** - Beautiful split-screen layout that works on all devices
 
 ## Getting Started
 
@@ -64,12 +68,21 @@ ChooseRestaurant/
 
 ## How It Works
 
-1. User selects cuisine type, cost range, and location
-2. Clicks "Spin the Wheel!" button
-3. Wheel spins for 2-3 seconds
-4. App filters restaurants based on selections
-5. Random restaurant from filtered list is displayed
-6. User can visit restaurant website or try again
+1. User makes selections (cuisine, cost, location, and/or exclude cuisine) - **at least one selection required**
+2. Wheel automatically starts spinning continuously as soon as any selection is made
+3. User clicks "Spin the Wheel!" button when ready
+4. Wheel does a final decelerating spin for 2-3 seconds
+5. App filters restaurants based on all selections (including exclusions)
+6. Random restaurant from filtered list is displayed
+7. User can visit restaurant website or try again
+
+## Key Features
+
+- **Flexible Selection**: Users can select any combination of criteria - no need to fill all fields
+- **Real-time Feedback**: Wheel spins continuously as soon as user starts making selections
+- **Smart Filtering**: Filters restaurants based on positive criteria and excludes unwanted cuisines
+- **Split-Screen Layout**: Modern UI with inputs on the left and wheel on the right
+- **Vibrant Design**: Colorful wheel with purple/indigo theme and smooth animations
 
 ## Future Enhancements
 
@@ -503,3 +516,187 @@ Cost: $
 Location: East (Cesar Chavez)
 URL: https://www.cenotecoffee.com/
 
+ADDITIONAL 30 AUSTIN RESTAURANTS
+
+Este
+Cuisine: Mexican/Seafood (Coastal)
+Cost: $$$
+Location: East (Manor Road)
+URL: https://www.esteatx.com/
+
+Casa Bianca
+Cuisine: Italian (Contemporary)
+Cost: $$
+Location: East (Cesar Chavez)
+URL: https://www.casabiancaatx.com/
+
+DipDipDip Tatsu-Ya
+Cuisine: Japanese (Hot Pot/Shabu-Shabu)
+Cost: $$$
+Location: North (Burnet Road)
+URL: https://www.dipdipdip-tatsuya.com/
+
+Eldorado Cafe
+Cuisine: Mexican (Tex-Mex)
+Cost: $$
+Location: North (Anderson Lane)
+URL: https://www.eldoradocafeatx.com/
+
+Ling Wu (Lantana)
+Cuisine: Chinese/Dim Sum
+Cost: $$
+Location: South/West (Southwest Parkway)
+URL: https://lingwulantana.com/
+
+Ling Wu (The Grove)
+Cuisine: Chinese/Dim Sum
+Cost: $$
+Location: North (Perseverance Drive)
+URL: https://lingwugrove.com/
+
+Soto South Lamar
+Cuisine: Japanese/Sushi
+Cost: $$
+Location: South (South Lamar)
+URL: https://sotosouthlamar.com/
+
+Banger's Sausage House & Beer Garden
+Cuisine: American (Sausages/BBQ)
+Cost: $$
+Location: Downtown (Rainey Street)
+URL: https://www.bangersaustin.com/
+
+All Day Pizza (Hyde Park)
+Cuisine: Pizza
+Cost: $
+Location: Central (Hyde Park)
+URL: https://alldaypizza.com/
+
+VanHorn's
+Cuisine: American (Burger/Diner)
+Cost: $
+Location: East Austin
+URL: N/A (newer establishment)
+
+La Piscina
+Cuisine: Tex-Mex/Seafood
+Cost: $$$
+Location: Downtown (SkyHouse)
+URL: https://www.lapiscina-austin.com/
+
+East End Ballroom
+Cuisine: New American
+Cost: $$
+Location: East Austin
+URL: N/A (newer establishment)
+
+Bread Boat
+Cuisine: Georgian (Khachapuri)
+Cost: $
+Location: East Austin
+URL: N/A (newer establishment)
+
+Old Alley Hot Pot
+Cuisine: Chinese (Hot Pot)
+Cost: $$
+Location: North Austin
+URL: N/A (newer establishment)
+
+
+Kai Zabb
+Cuisine: Thai (Fried Chicken)
+Cost: $
+Location: North (McNeil/183 area)
+URL: N/A (food truck)
+
+Sami Sumeli
+Cuisine: Georgian
+Cost: $
+Location: Cedar Park
+URL: N/A
+
+Lin Asian Bar + Dim Sum
+Cuisine: Chinese/Dim Sum
+Cost: $$
+Location: Downtown (West 6th Street)
+URL: https://lingwuatx.com/
+
+De Nada Cantina
+Cuisine: Mexican
+Cost: $$
+Location: Central Austin
+URL: N/A
+
+
+Flo's Wine Bar
+Cuisine: Wine Bar/Small Plates
+Cost: $$
+Location: Central Austin
+URL: N/A
+
+Cuantos Tacos
+Cuisine: Mexican (Tacos)
+Cost: $
+Location: Multiple locations
+URL: https://www.cuantostacos.com/
+
+Gangnam Korean BBQ
+Cuisine: Korean BBQ
+Cost: $$
+Location: North Austin
+URL: N/A
+
+Casa do Brasil
+Cuisine: Brazilian (Churrascaria)
+Cost: $$$
+Location: North (MoPac)
+URL: https://www.casadobrasilaustin.com/
+
+Arepitas
+Cuisine: Venezuelan
+Cost: $
+Location: Round Rock
+URL: N/A
+
+Pho Phong Luu
+Cuisine: Vietnamese (Pho)
+Cost: $
+Location: North (Dessau Road)
+URL: N/A
+
+ATX Cocina
+Cuisine: Mexican
+Cost: $$
+Location: Downtown
+URL: https://www.atxcocina.com/
+
+Ramen Del Barrio
+Cuisine: Latin-Asian Fusion (Ramen)
+Cost: $$
+Location: North (Parmer Lane)
+URL: https://www.ramendelbarrio.com/
+
+Salt Traders Coastal Cooking
+Cuisine: Seafood/Coastal
+Cost: $$
+Location: Round Rock
+URL: https://www.salttraders.com/
+
+Bartlett's
+Cuisine: American (Diner/Comfort)
+Cost: $
+Location: North (Anderson Lane)
+URL: https://www.bartlettsaustin.com/
+
+Ember Kitchen
+Cuisine: New American
+Cost: $$
+Location: Downtown (Cesar Chavez)
+URL: N/A
+
+
+Vic & Al's
+Cuisine: Italian
+Cost: $$
+Location: East (Manor Road)
+URL: https://www.vicandals.com/
