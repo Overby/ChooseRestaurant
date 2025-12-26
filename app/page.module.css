@@ -1,0 +1,280 @@
+.main {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  background: white;
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.splitContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.leftPanel {
+  display: flex;
+  flex-direction: column;
+}
+
+.rightPanel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 2rem;
+  min-height: 500px;
+  height: fit-content;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #718096;
+  font-weight: 500;
+}
+
+.selectionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.selectGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.select {
+  padding: 0.875rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: white;
+  color: #1a202c;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.select:hover {
+  border-color: #667eea;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.spinButton {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.spinButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.spinButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.spinButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.wheelContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.resultContainer {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.resultCard {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+  border-radius: 16px;
+  border: 2px solid #e2e8f0;
+}
+
+.resultTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.restaurantName {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #667eea;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.restaurantDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  text-align: left;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.restaurantDetails p {
+  font-size: 1.125rem;
+  color: #4a5568;
+  margin: 0;
+}
+
+.detailLabel {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.websiteLink {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  background: #667eea;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: all 0.3s;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.websiteLink:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.resetButton {
+  display: block;
+  width: 100%;
+  padding: 0.875rem 2rem;
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+
+.resetButton:hover {
+  background: #667eea;
+  color: white;
+}
+
+@media (max-width: 968px) {
+  .splitContainer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .rightPanel {
+    position: relative;
+    top: 0;
+    order: -1;
+  }
+
+  .wheelContainer {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .restaurantName {
+    font-size: 1.75rem;
+  }
+
+  .spinButton {
+    font-size: 1.125rem;
+    padding: 0.875rem 1.5rem;
+  }
+
+  .splitContainer {
+    gap: 1.5rem;
+  }
+}
+
