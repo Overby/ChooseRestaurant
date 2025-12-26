@@ -97,6 +97,15 @@
   }
 }
 
+@keyframes spinContinuous {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .wheel.spinning {
   animation: spin 2500ms cubic-bezier(0.17, 0.67, 0.12, 0.99);
 }

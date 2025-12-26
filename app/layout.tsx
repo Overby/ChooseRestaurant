@@ -5,8 +5,8 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Choose Restaurant - Austin, TX',
-  description: "Can't decide where to eat? Let the wheel choose for you!",
+  title: 'You Pick - Restaurant Recommendation',
+  description: "I don't know, you choose. Let the wheel decide where to eat in Austin, TX!",
 };
 
 export default function RootLayout({

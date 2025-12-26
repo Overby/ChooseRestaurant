@@ -10,8 +10,13 @@ export default function Home() {
   const [cost, setCost] = useState<string>('');
   const [location, setLocation] = useState<string>('');
   const [isSpinning, setIsSpinning] = useState(false);
+  const [isFinalSpin, setIsFinalSpin] = useState(false);
   const [recommendation, setRecommendation] = useState<Restaurant | null>(null);
   const [showResult, setShowResult] = useState(false);
+
+  // Determine if wheel should be spinning (when user has started inputting)
+  const hasInput = cuisine || cost || location;
+  const shouldSpin = hasInput && !showResult;
 
   const getFilteredRestaurants = (): Restaurant[] => {
     return restaurants.filter((restaurant) => {
@@ -52,7 +57,7 @@ export default function Home() {
       return;
     }
 
-    setIsSpinning(true);
+    setIsFinalSpin(true);
     setShowResult(false);
     setRecommendation(null);
 
@@ -65,7 +70,7 @@ export default function Home() {
       const selected = filtered[randomIndex];
       
       setRecommendation(selected);
-      setIsSpinning(false);
+      setIsFinalSpin(false);
       
       // Show result after a brief delay
       setTimeout(() => {
@@ -81,17 +86,22 @@ export default function Home() {
     setRecommendation(null);
     setShowResult(false);
     setIsSpinning(false);
+    setIsFinalSpin(false);
   };
 
   return (
     <main className={styles.main}>
       <div className={styles.container}>
         <header className={styles.header}>
-          <h1 className={styles.title}>Can't Decide Where to Eat?</h1>
-          <p className={styles.subtitle}>
-            Girlfriend can't decide where to eat? Here you go! 🎡
-          </p>
+          <h1 className={styles.title}>You Pick</h1>
         </header>
+
+        <div className={styles.quoteSection}>
+          <blockquote className={styles.quote}>
+            "I don't know, you choose."
+          </blockquote>
+          <cite className={styles.attribution}>—Your Loved One</cite>
+        </div>
 
         <div className={styles.splitContainer}>
           {/* Left Side - User Input */}
@@ -107,7 +117,7 @@ export default function Home() {
                     value={cuisine}
                     onChange={(e) => setCuisine(e.target.value)}
                     className={styles.select}
-                    disabled={isSpinning}
+                    disabled={isFinalSpin}
                   >
                     <option value="">Select cuisine...</option>
                     <option value="Italian">Italian</option>
@@ -127,7 +137,7 @@ export default function Home() {
                     value={cost}
                     onChange={(e) => setCost(e.target.value)}
                     className={styles.select}
-                    disabled={isSpinning}
+                    disabled={isFinalSpin}
                   >
                     <option value="">Select cost...</option>
                     <option value="$">$ - Budget Friendly</option>
@@ -145,7 +155,7 @@ export default function Home() {
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
                     className={styles.select}
-                    disabled={isSpinning}
+                    disabled={isFinalSpin}
                   >
                     <option value="">Select location...</option>
                     <option value="North">North</option>
@@ -158,9 +168,9 @@ export default function Home() {
                 <button
                   onClick={handleSpin}
                   className={styles.spinButton}
-                  disabled={!cuisine || !cost || !location || isSpinning}
+                  disabled={!cuisine || !cost || !location || isFinalSpin}
                 >
-                  {isSpinning ? 'Spinning...' : 'Spin the Wheel! 🎡'}
+                  {isFinalSpin ? 'Spinning...' : 'Spin the Wheel! 🎡'}
                 </button>
               </div>
             ) : (
@@ -203,7 +213,7 @@ export default function Home() {
           {/* Right Side - Wheel */}
           <div className={styles.rightPanel}>
             <div className={styles.wheelContainer}>
-              <Wheel isSpinning={isSpinning} />
+              <Wheel isSpinning={shouldSpin || isFinalSpin} isContinuous={shouldSpin && !isFinalSpin} />
             </div>
           </div>
         </div>

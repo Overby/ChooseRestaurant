@@ -14,6 +14,7 @@
   border-radius: 24px;
   padding: 2.5rem;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
 }
 
 .splitContainer {
@@ -21,6 +22,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: start;
+  position: relative;
 }
 
 .leftPanel {
@@ -39,22 +41,53 @@
 }
 
 .header {
-  text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #1a202c;
-  margin-bottom: 0.5rem;
-  line-height: 1.2;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin: 0;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
 }
 
-.subtitle {
+.quoteSection {
+  text-align: center;
+  margin: 2rem 0 3rem 0;
+  width: 100%;
+}
+
+.quote {
+  font-size: 2rem;
+  font-weight: 300;
+  font-style: italic;
+  color: #64748b;
+  margin: 0 0 1rem 0;
+  line-height: 1.4;
+  quotes: '"' '"';
+}
+
+.quote::before {
+  content: open-quote;
+}
+
+.quote::after {
+  content: close-quote;
+}
+
+.attribution {
   font-size: 1.125rem;
-  color: #718096;
   font-weight: 500;
+  color: #94a3b8;
+  font-style: normal;
+  display: block;
+  margin-top: 0.5rem;
 }
 
 .selectionContainer {
@@ -248,6 +281,14 @@
   .wheelContainer {
     min-height: 300px;
   }
+
+  .quoteSection {
+    margin: 1.5rem 0 2rem 0;
+  }
+
+  .quote {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 640px) {
@@ -257,10 +298,18 @@
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
-  .subtitle {
+  .quoteSection {
+    margin: 1.5rem 0 2rem 0;
+  }
+
+  .quote {
+    font-size: 1.5rem;
+  }
+
+  .attribution {
     font-size: 1rem;
   }
 
